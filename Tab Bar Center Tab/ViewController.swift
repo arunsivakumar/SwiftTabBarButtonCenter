@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         self.tabBarController?.tabBar.layer.borderWidth = 0
         self.tabBarController?.tabBar.layer.borderColor = self.tabBarController?.tabBar.tintColor.CGColor
         
-        self.addCenterButtonWithImage(UIImage(named: "camera_button_take.png")!, highlightImage: nil)
+        self.addCenterButtonWithImage(UIImage(named: "capture-button.png")!, highlightImage: nil)
         // [self addCenterButtonWithImage:[UIImage imageNamed:@"capture-button.png"] highlightImage:nil];
     }
     
@@ -34,8 +34,8 @@ class ViewController: UIViewController {
     }
     
     func addCenterButtonWithImage(buttonImage: UIImage, highlightImage: UIImage?){
-        let button = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        button.autoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleBottomMargin | UIViewAutoresizing.FlexibleTopMargin
+        let button = UIButton(type: UIButtonType.Custom) as UIButton
+        button.autoresizingMask = [UIViewAutoresizing.FlexibleRightMargin, UIViewAutoresizing.FlexibleLeftMargin,UIViewAutoresizing.FlexibleTopMargin,UIViewAutoresizing.FlexibleBottomMargin]
         
         button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)
         button.setBackgroundImage(buttonImage, forState: UIControlState.Normal)
@@ -45,7 +45,10 @@ class ViewController: UIViewController {
         var heightDifference: CGFloat = buttonImage.size.height - self.tabBarController!.tabBar.frame.size.height
         
         if (heightDifference < 0){
-            button.center = self.tabBarController!.tabBar.center
+//            button.center = self.tabBarController!.tabBar.center
+            var center: CGPoint = self.tabBarController!.tabBar.center
+            center.y = (center.y ) - self.tabBarController!.tabBar.frame.origin.y
+            button.center = center
         }else{
             var center: CGPoint = self.tabBarController!.tabBar.center
             center.y = center.y - self.tabBarController!.tabBar.frame.origin.y - heightDifference/2.0

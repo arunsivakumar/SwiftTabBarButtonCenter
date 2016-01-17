@@ -156,6 +156,7 @@
 		822C81EB1A96F0AD00F6F217 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = videmor;
 				TargetAttributes = {
@@ -405,6 +406,7 @@
 				822C82141A96F0AD00F6F217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		822C82151A96F0AD00F6F217 /* Build configuration list for PBXNativeTarget "Tab Bar Center TabTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +415,7 @@
 				822C82171A96F0AD00F6F217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
